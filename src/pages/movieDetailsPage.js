@@ -1,6 +1,6 @@
 import React from "react";
-import MovieHeader from "../components/headerMovie/";
-import MovieDetails from "../components/movieDetails/";
+import MovieHeader from "../components/headerMovie";
+import MovieDetails from "../components/movieDetails";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import ImageList from "@material-ui/core/ImageList";
