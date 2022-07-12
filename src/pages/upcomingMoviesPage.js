@@ -3,7 +3,7 @@ import PageTemplate from '../components/templateMovieListPage'
 import { getUpcomingMovies } from "../api/tmdb-api";
 
 const UpcomingMoviesPage = (props) => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setUpcomingMovies] = useState([]);
   const favourites = movies.filter(m => m.favourite)
   localStorage.setItem('favourites', JSON.stringify(favourites))
 
@@ -11,7 +11,8 @@ const UpcomingMoviesPage = (props) => {
 
   useEffect(() => {
       getUpcomingMovies().then((movies) => {
-        setMovies(movies);
+        setUpcomingMovies(movies);
+        console.log(movies);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
