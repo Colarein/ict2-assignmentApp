@@ -1,7 +1,7 @@
 
 # ICT Skills 2 Assignment.
 
-Name: [your name]
+Name: Caroline Conway
 
 ## Overview.
 
@@ -17,6 +17,24 @@ e.g.
 ## Setup requirements.
 
 [ Briefly state (to a third party) the setup steps necessary to run your app/client locally, e.g. .env and any other config files.]
+
+An API Key authenticates all requests to the API. Please follow these steps to acquire a personal key for development:
+
+Signup for an account here:themoviedb.org/signup
+Log in to your account. To get a key, follow this sequence:
+Settings > API > Create > Click on Request an API > Click "Developer" > Fill in Details
+
+In VS Code, in the project base folder, open the .env file and set REACTAPPTMDB_KEY to your new key value.
+
+REACT_APP_TMDB_KEY=.... your API key value ...
+FAST_REFRESH=false
+
+npm install
+
+npm run start
+
+
+
 
 ## App Design.
 

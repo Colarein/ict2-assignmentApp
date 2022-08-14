@@ -35,6 +35,8 @@ const App = () => {
             <Route path="/reviews/:id" element={<MovieReviewPage/>} />
             <Route path="/movies/favourites" element={<FavouriteMoviesPage/>} />
             <Route path="/movies/:id" element={<MoviePage/>} />
+            {/* <Route path="/actors/list" element={<ListActorPage/>} />
+            <Route path="/actors/:id" element={<ActorPage/>} /> */}
             <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </MoviesContextProvider>

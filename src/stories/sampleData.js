@@ -9,6 +9,11 @@ export default {
       backdrop_path: "/d8duYyyC9J5T825Hg7grmaabfxQ.jpg",
     },
     budget: 200000000,
+    actor: [
+      {
+      name: "Daisy Ridley",
+    },
+  ],
     genres: [
       {
         id: 14,
