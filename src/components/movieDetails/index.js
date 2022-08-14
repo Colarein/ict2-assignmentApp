@@ -6,11 +6,11 @@ import MonetizationIcon from "@material-ui/icons/MonetizationOn";
 import StarRate from "@material-ui/icons/StarRate";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-// New
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
-import MovieReviews from '../movieReviews'
+import MovieReviews from '../movieReviews';
+import SimilarMovies from "../similarMovies";
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
@@ -87,6 +87,7 @@ const MovieDetails = ( {movie}) => {
           <li key={g.name}>
             <Chip label={g.name} className={classes.chip} />
           </li>
+          // Cast - Actors?
         ))}
       </Paper>
       <Fab    
@@ -102,6 +103,7 @@ const MovieDetails = ( {movie}) => {
         <MovieReviews movie={movie} />
       </Drawer>
     </>
+    
   );
 };
 export default  MovieDetails ;

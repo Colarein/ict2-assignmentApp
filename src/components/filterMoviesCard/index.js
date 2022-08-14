@@ -85,6 +85,7 @@ export default function FilterMoviesCard(props) {
               return (
                 <MenuItem key={genre.id} value={genre.id}>
                   {genre.name}
+                  // Filter by Actor Name
                 </MenuItem>
               );
             })}
