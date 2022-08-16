@@ -1,15 +1,9 @@
 import React, { useEffect, useState }  from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { Link } from "react-router-dom";
 import { getSimilarMovies } from "../../api/tmdb-api";
-import { excerpt } from "../../util";
 
 const useStyles = makeStyles({
   table: {
@@ -25,40 +19,20 @@ export default function SimilarMovies({ movie }) {
     getSimilarMovies(movie.id).then((similarMovies) => {
       setSimilarMovies(similarMovies);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="similar movies table">
-        <TableHead>
-          <TableRow>
-            <TableCell >Author</TableCell>
-            <TableCell align="center">Excerpt</TableCell>
-            <TableCell align="right">More</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {similarMovies.map((s) => (
-            <TableRow key={s.id}>
-              <TableCell component="th" scope="row">
-                {s.author}
-              </TableCell>
-              <TableCell >{excerpt(s.content)}</TableCell>
-              <TableCell >
-                <Link
-                  to={`/reviews/${s.id}`}
-                  state={{
-                    similarMovie: s,
-                    movie: movie,
-                  }}
+     <Link
+        to={`/similars/${movie.id}`}
+        state={{
+        similarMovie: similarMovies,
+        movie: movie,
+            }}
                 >
                   See Movie
                 </Link>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
     </TableContainer>
   );
 }

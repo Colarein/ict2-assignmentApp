@@ -10,6 +10,8 @@ import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from '../movieReviews';
+import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 import SimilarMovies from "../similarMovies";
 
 const useStyles = makeStyles((theme) => ({
@@ -102,6 +104,12 @@ const MovieDetails = ( {movie}) => {
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
+      <Link to={`/similars/${movie.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
+          <SimilarMovies movie={movie} />
+          See More Movies like this ...
+          </Button>
+        </Link>
     </>
     
   );
