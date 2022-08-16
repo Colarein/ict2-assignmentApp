@@ -7,9 +7,9 @@ import Box from "@material-ui/core/Box";
 import { useForm } from "react-hook-form";
 import { MoviesContext } from "../../contexts/moviesContext";
 import MenuItem from "@material-ui/core/MenuItem";
-import Snackbar from "@material-ui/core/Snackbar"; 
+import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const ratings = [
   {
@@ -54,11 +54,11 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   snack: {
-     width: "50%",
-     "& > * ": {
-       width: "100%",
-     },
-   },
+    width: "50%",
+    "& > * ": {
+      width: "100%",
+    },
+  },
 }));
 
 const ReviewForm = ({ movie }) => {
@@ -66,14 +66,14 @@ const ReviewForm = ({ movie }) => {
   const { register, handleSubmit, errors, reset } = useForm();
   const context = useContext(MoviesContext);
   const [rating, setRating] = useState(3);
-  const [open, setOpen] = useState(false);  //NEW
-  const navigate = useNavigate()          
+  const [open, setOpen] = useState(false); //NEW
+  const navigate = useNavigate();
 
   const handleRatingChange = (event) => {
     setRating(event.target.value);
   };
 
-  const handleSnackClose = (event) => {     
+  const handleSnackClose = (event) => {
     setOpen(false);
     navigate("/movies/favourites");
   };
@@ -83,14 +83,14 @@ const ReviewForm = ({ movie }) => {
     review.rating = rating;
     // console.log(review);
     context.addReview(movie, review);
-    setOpen(true);   // NEW
+    setOpen(true); // NEW
   };
 
   return (
     <Box component="div" className={classes.root}>
       <Typography component="h2" variant="h3">
         Write a review
-      </Typography>   
+      </Typography>
       <Snackbar
         className={classes.snack}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}

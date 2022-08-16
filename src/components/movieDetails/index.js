@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
-import MovieReviews from '../movieReviews';
+import MovieReviews from "../movieReviews";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import SimilarMovies from "../similarMovies";
@@ -37,14 +37,15 @@ const useStyles = makeStyles((theme) => ({
   chipLabel: {
     margin: theme.spacing(0.5),
   },
-  fab: {  //New
+  fab: {
+    //New
     position: "fixed",
     top: theme.spacing(15),
     right: theme.spacing(2),
   },
 }));
 
-const MovieDetails = ( {movie}) => {
+const MovieDetails = ({ movie }) => {
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false); // New
 
@@ -58,32 +59,40 @@ const MovieDetails = ( {movie}) => {
         {movie.overview}
       </Typography>
       <div className={classes.chipRoot}>
-      <Paper component="ul" className={classes.chipSet}>
-        <li>
-          <Chip label="Genres" className={classes.chipLabel} color="primary" />
-        </li>
-        {movie.genres.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name} className={classes.chip} />
+        <Paper component="ul" className={classes.chipSet}>
+          <li>
+            <Chip
+              label="Genres"
+              className={classes.chipLabel}
+              color="primary"
+            />
           </li>
-        ))}
-      </Paper>
-      <Paper component="ul" className={classes.chipSet}>
-        <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
-        <Chip
-          icon={<MonetizationIcon />}
-          label={`${movie.revenue.toLocaleString()}`}
-        />
-        <Chip
-          icon={<StarRate />}
-          label={`${movie.vote_average} (${movie.vote_count}`}
-        />
-        <Chip label={`Released: ${movie.release_date}`} />
-      </Paper>
+          {movie.genres.map((g) => (
+            <li key={g.name}>
+              <Chip label={g.name} className={classes.chip} />
+            </li>
+          ))}
+        </Paper>
+        <Paper component="ul" className={classes.chipSet}>
+          <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
+          <Chip
+            icon={<MonetizationIcon />}
+            label={`${movie.revenue.toLocaleString()}`}
+          />
+          <Chip
+            icon={<StarRate />}
+            label={`${movie.vote_average} (${movie.vote_count}`}
+          />
+          <Chip label={`Released: ${movie.release_date}`} />
+        </Paper>
       </div>
       <Paper component="ul" className={classes.chipSet}>
         <li>
-          <Chip label="Production Countries" className={classes.chipLabel} color="primary" />
+          <Chip
+            label="Production Countries"
+            className={classes.chipLabel}
+            color="primary"
+          />
         </li>
         {movie.production_countries.map((g) => (
           <li key={g.name}>
@@ -92,26 +101,29 @@ const MovieDetails = ( {movie}) => {
           // Cast - Actors?
         ))}
       </Paper>
-      <Fab    
+      <Fab
         color="secondary"
         variant="extended"
-        onClick={() =>setDrawerOpen(true)}
+        onClick={() => setDrawerOpen(true)}
         className={classes.fab}
       >
         <NavigationIcon />
         Reviews
       </Fab>
-      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+      <Drawer
+        anchor="top"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+      >
         <MovieReviews movie={movie} />
       </Drawer>
       <Link to={`/similars/${movie.id}`}>
-          <Button variant="outlined" size="medium" color="primary">
+        <Button variant="outlined" size="medium" color="primary">
           <SimilarMovies movie={movie} />
           See More Movies like this ...
-          </Button>
-        </Link>
+        </Button>
+      </Link>
     </>
-    
   );
 };
-export default  MovieDetails ;
+export default MovieDetails;

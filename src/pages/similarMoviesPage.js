@@ -4,7 +4,9 @@ import PageTemplate from "../components/templateMoviePage";
 import SimilarMovie from "../components/similarMovie";
 
 const SimilarMoviesPage = (props) => {
-  const { state : {movie, similarMovie } } = useLocation()
+  const {
+    state: { movie, similarMovie },
+  } = useLocation();
   return (
     <PageTemplate movie={movie}>
       <SimilarMovie similarMovie={similarMovie} />

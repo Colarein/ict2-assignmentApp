@@ -1,6 +1,6 @@
 import React from "react";
 
-const SimilarMovie =  ({ similarMovie }) => {
+const SimilarMovie = ({ similarMovie }) => {
   return (
     <>
       <p>Movie Details Show here Description: {similarMovie.title} </p>

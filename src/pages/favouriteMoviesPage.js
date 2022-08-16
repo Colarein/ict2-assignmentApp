@@ -31,7 +31,6 @@ const FavouriteMoviesPage = () => {
     return q.data;
   });
 
-
   return (
     <PageTemplate
       title="Favourite Movies"

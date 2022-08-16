@@ -12,7 +12,10 @@ const AddToMustWatchListIcon = ({ movie }) => {
     console.log(movie);
   };
   return (
-    <IconButton aria-label="add to must watch" onClick={handleAddToMustWatchList}>
+    <IconButton
+      aria-label="add to must watch"
+      onClick={handleAddToMustWatchList}
+    >
       <PlaylistAddIcon color="primary" fontSize="large" />
     </IconButton>
   );

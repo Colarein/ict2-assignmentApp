@@ -1,4 +1,4 @@
-import React from "react";  // useState/useEffect redundant 
+import React from "react"; // useState/useEffect redundant
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -11,7 +11,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { getGenres } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
-import Spinner from '../spinner'
+import Spinner from "../spinner";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,7 +38,7 @@ export default function FilterMoviesCard(props) {
     return <h1>{error.message}</h1>;
   }
   const genres = data.genres;
-  if (genres[0].name !== "All"){
+  if (genres[0].name !== "All") {
     genres.unshift({ id: "0", name: "All" });
   }
 
@@ -55,45 +55,44 @@ export default function FilterMoviesCard(props) {
     handleChange(e, "genre", e.target.value);
   };
 
-
   return (
     <>
-    <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography variant="h5" component="h1">
-          <SearchIcon fontSize="large" />
-          Filter the movies.
-        </Typography>
-        <TextField
-          className={classes.formControl}
-          id="filled-search"
-          label="Search field"
-          type="search"
-          value={props.titleFilter}
-          variant="filled"
-          onChange={handleTextChange}
-        />
-        <FormControl className={classes.formControl}>
-          <InputLabel id="genre-label">Genre</InputLabel>
-          <Select
-            labelId="genre-label"
-            id="genre-select"
-            value={props.genreFilter}
-            onChange={handleGenreChange}
-          >
-            {genres.map((genre) => {
-              return (
-                <MenuItem key={genre.id} value={genre.id}>
-                  {genre.name}
-                  // Filter by Actor Name
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
-      </CardContent>
-    </Card>
-    <Card className={classes.root} variant="outlined">
+      <Card className={classes.root} variant="outlined">
+        <CardContent>
+          <Typography variant="h5" component="h1">
+            <SearchIcon fontSize="large" />
+            Filter the movies.
+          </Typography>
+          <TextField
+            className={classes.formControl}
+            id="filled-search"
+            label="Search field"
+            type="search"
+            value={props.titleFilter}
+            variant="filled"
+            onChange={handleTextChange}
+          />
+          <FormControl className={classes.formControl}>
+            <InputLabel id="genre-label">Genre</InputLabel>
+            <Select
+              labelId="genre-label"
+              id="genre-select"
+              value={props.genreFilter}
+              onChange={handleGenreChange}
+            >
+              {genres.map((genre) => {
+                return (
+                  <MenuItem key={genre.id} value={genre.id}>
+                    {genre.name}
+                    // Filter by Actor Name
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </CardContent>
+      </Card>
+      <Card className={classes.root} variant="outlined">
         <CardContent>
           <Typography variant="h5" component="h1">
             <SearchIcon fontSize="large" />
@@ -101,6 +100,6 @@ export default function FilterMoviesCard(props) {
           </Typography>
         </CardContent>
       </Card>
-      </>
+    </>
   );
 }

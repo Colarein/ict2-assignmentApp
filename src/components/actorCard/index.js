@@ -24,9 +24,7 @@ export default function ActorCard(props) {
 
   return (
     <Card className={classes.card}>
-          <CardHeader
-      className={classes.header}
-      name={person.name} />
+      <CardHeader className={classes.header} name={person.name} />
       <CardMedia
         className={classes.media}
         image={
@@ -46,7 +44,7 @@ export default function ActorCard(props) {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-      {action(person)}
+        {action(person)}
         <Link to={`/actors/${actor.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...

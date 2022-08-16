@@ -1,4 +1,3 @@
-
 # ICT Skills 2 Assignment.
 
 Name: Caroline Conway
@@ -7,12 +6,13 @@ Name: Caroline Conway
 
 [ A paragraph on your React app's concept followed by a bullet-point list of its feature set - only list new/modified features if you are expanding the Movies app. ]
 
-e.g. 
-+ Feature 1
-+ Feature 2
-+ Feature 3
-+ etc
-+ etc
+e.g.
+
+- Feature 1
+- Feature 2
+- Feature 3
+- etc
+- etc
 
 ## Setup requirements.
 
@@ -33,36 +33,34 @@ npm install
 
 npm run start
 
-
-
-
 ## App Design.
 
 ### Routing/Navigation.
 
-[List the set of routes your app supports - only mention new instances if you expanded the Movies Fan app. State the view linked with each route.] 
+[List the set of routes your app supports - only mention new instances if you expanded the Movies Fan app. State the view linked with each route.]
 
 e.g.
-+ /movies/:id - detailed information on a specific movie.
-+ /movies/upcoming - lists movies soon to be shown in cinemas.
-+ etc.
-+ etc.
+
+- /movies/:id - detailed information on a specific movie.
+- /movies/upcoming - lists movies soon to be shown in cinemas.
+- etc.
+- etc.
 
 ### Views/Pages.
 
 [ For each view in your app, show a screenshot and caption - only new/modified ones in the case of the Movies Fan app. If necessary, use multiple screenshots to cover a view's full capability.
 
 e.g.
->Lists movies from the Discover endpoint. Filtering on title and genre attributes is supported.
+
+> Lists movies from the Discover endpoint. Filtering on title and genre attributes is supported.
 
 ![][d1]
 
 ![][d2]
 
->Shows detailed information on a specific movie
+> Shows detailed information on a specific movie
 
 ![][detail]
-
 
 ### Component catalogue.
 
@@ -76,10 +74,11 @@ e.g.
 [ List the TMDB server state cached by the app. Include a screenshot(s) of the react-query dev tools to validate your list.]
 
 e.g.
-+ Discover movies (pagination support)
-+ Movie details
- + etc
-+ etc
+
+- Discover movies (pagination support)
+- Movie details
+- etc
+- etc
 
 ![][caching]
 
@@ -88,12 +87,13 @@ e.g.
 [Briefly state how you implemented authentication for the app, e.g. basic, Firebase, etc. Also, list the routes that are private/protected.]
 
 e.g.
-+ /reviews/:id
-+ /movies/favourites
+
+- /reviews/:id
+- /movies/favourites
 
 ## Server-side persistence (if relevant)
 
-[ Specify the persistence 
+[ Specify the persistence
 platform your app uses (e.g. TMDB lists, Firestore) and itemize the data it persists.]
 
 ## Additional features (if relevant),

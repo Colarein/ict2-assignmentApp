@@ -1,4 +1,4 @@
-import React from "react";  // useState/useEffect redundant 
+import React from "react"; // useState/useEffect redundant
 import MovieHeader from "../headerMovie";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -6,7 +6,7 @@ import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import { getMovieImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
-import Spinner from '../spinner';
+import Spinner from "../spinner";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,13 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
   imageList: {
     width: 450,
-    height: '100vh',
+    height: "100vh",
   },
 }));
 
 const TemplateMoviePage = ({ movie, children }) => {
   const classes = useStyles();
-  const { data , error, isLoading, isError } = useQuery(
+  const { data, error, isLoading, isError } = useQuery(
     ["images", { id: movie.id }],
     getMovieImages
   );
@@ -37,7 +37,7 @@ const TemplateMoviePage = ({ movie, children }) => {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-  const images = data.posters 
+  const images = data.posters;
 
   return (
     <div className={classes.root}>
