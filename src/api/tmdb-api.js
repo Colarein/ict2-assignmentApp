@@ -34,8 +34,8 @@ export const getMovie = (args) => {
 export const getGenres = async () => {
   return fetch(
     "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-      process.env.REACT_APP_TMDB_KEY +
-      "&language=en-US"
+    process.env.REACT_APP_TMDB_KEY +
+    "&language=en-US"
   )
     .then((response) => {
       if (!response.ok) {
@@ -113,9 +113,9 @@ export const getActor = (id) => {
     });
 };
 
-export const getSimilarMovies = (id) => {
+export const getSimilarMovies = (movie_id) => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    `https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}`
   )
     .then((res) => res.json())
     .then((json) => {
