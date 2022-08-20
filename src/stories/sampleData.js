@@ -8,10 +8,19 @@ export default {
     backdrop_path: "/d8duYyyC9J5T825Hg7grmaabfxQ.jpg",
   },
   budget: 200000000,
-  actor: [
+  actorNames: [
     {
+      id: 1,
       name: "Daisy Ridley",
     },
+    {
+      id: 2,
+      name: "Mark Hamill",
+    },
+    {
+      id: 3,
+      name: "Yoda",
+    }
   ],
   genres: [
     {

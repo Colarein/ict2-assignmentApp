@@ -31,7 +31,7 @@ export default function SimilarMovies({ movie }) {
           movie: movie,
         }}
       >
-        See Movie
+        See More Movies Like this...
       </Link>
     </TableContainer>
   );

@@ -9,10 +9,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
-import MovieReviews from "../movieReviews";
+import MovieReviews from '../movieReviews';
 import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
-import SimilarMovies from "../similarMovies";
+// import { Button } from "@material-ui/core";
+// import SimilarMovies from "../similarMovies";
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
@@ -37,8 +37,7 @@ const useStyles = makeStyles((theme) => ({
   chipLabel: {
     margin: theme.spacing(0.5),
   },
-  fab: {
-    //New
+  fab: {  //New
     position: "fixed",
     top: theme.spacing(15),
     right: theme.spacing(2),
@@ -61,11 +60,7 @@ const MovieDetails = ({ movie }) => {
       <div className={classes.chipRoot}>
         <Paper component="ul" className={classes.chipSet}>
           <li>
-            <Chip
-              label="Genres"
-              className={classes.chipLabel}
-              color="primary"
-            />
+            <Chip label="Genres" className={classes.chipLabel} color="primary" />
           </li>
           {movie.genres.map((g) => (
             <li key={g.name}>
@@ -88,11 +83,7 @@ const MovieDetails = ({ movie }) => {
       </div>
       <Paper component="ul" className={classes.chipSet}>
         <li>
-          <Chip
-            label="Production Countries"
-            className={classes.chipLabel}
-            color="primary"
-          />
+          <Chip label="Production Countries" className={classes.chipLabel} color="primary" />
         </li>
         {movie.production_countries.map((g) => (
           <li key={g.name}>
@@ -110,20 +101,17 @@ const MovieDetails = ({ movie }) => {
         <NavigationIcon />
         Reviews
       </Fab>
-      <Drawer
-        anchor="top"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-      >
+      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
       <Link to={`/similars/${movie.id}`}>
-        <Button variant="outlined" size="medium" color="primary">
+        {/* <Button variant="outlined" size="medium" color="primary">
           <SimilarMovies movie={movie} />
           See More Movies like this ...
-        </Button>
+        </Button> */}
       </Link>
     </>
+
   );
 };
 export default MovieDetails;

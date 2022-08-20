@@ -19,8 +19,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ActorCard(props) {
+export default function PersonCard(props) {
   const classes = useStyles();
+  const person = props.person;
 
   return (
     <Card className={classes.card}>
@@ -38,18 +39,18 @@ export default function ActorCard(props) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {person.name}
+              {person.birthday}
             </Typography>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-        {action(person)}
-        <Link to={`/actors/${actor.id}`}>
-          <Button variant="outlined" size="medium" color="primary">
-            More Info ...
-          </Button>
-        </Link>
+        {/* {action(person)}
+        <Link to={`/actors/${actor.id}`}> */}
+        <Button variant="outlined" size="medium" color="primary">
+          More Info ...
+        </Button>
+        {/* </Link> */}
       </CardActions>
     </Card>
   );

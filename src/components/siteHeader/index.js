@@ -43,6 +43,7 @@ const SiteHeader = () => {
     { label: "Home", path: "/" },
     { label: "Favourites", path: "/movies/favourites" },
     { label: "Upcoming Movies", path: "/movies/upcoming" },
+    { label: "Similar Movies", path: "/similars/:id" },
     { label: "Actors", path: "/actors/list" },
   ];
 
@@ -115,7 +116,7 @@ const SiteHeader = () => {
                     isActive ? classes.activeLink : classes.inactiveLink
                   }
                   color="inherit"
-                  // onClick={() => handleMenuSelect(opt.path)}
+                // onClick={() => handleMenuSelect(opt.path)}
                 >
                   {opt.label}
                 </NavLink>
