@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PersonListHeader = (props) => {
   const classes = useStyles();
-  const title = props.title
+  const name = props.name
   return (
     <Paper component="div" className={classes.root}>
       <IconButton
@@ -28,7 +28,7 @@ const PersonListHeader = (props) => {
       </IconButton>
 
       <Typography variant="h4" component="h3">
-        {title}
+        {name}
       </Typography>
       <IconButton
         aria-label="go forward"

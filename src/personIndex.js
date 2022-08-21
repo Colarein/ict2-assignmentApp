@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PersonsHomePage from "./pages/personsHomePage";
+// import PersonsHomePage from "./pages/personsHomePage";
+import PersonDetailsPage from './pages/personDetailsPage'
 
 const sample = {
   adult: false,
@@ -8,7 +9,7 @@ const sample = {
   belongs_to_collection: {
     id: 10,
     name: "Star Wars Collection",
-    poster_path: "/iTQHKziZy9pAAY4hHEDCGPaOvFC.jpg",
+    profile_path: "/iTQHKziZy9pAAY4hHEDCGPaOvFC.jpg",
     backdrop_path: "/d8duYyyC9J5T825Hg7grmaabfxQ.jpg",
   },
   budget: 200000000,
@@ -53,7 +54,7 @@ const sample = {
   overview:
     "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
   popularity: 44.208,
-  poster_path: "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+  profile_path: "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
   production_companies: [
     {
       id: 1,
@@ -99,9 +100,17 @@ const sample = {
 
 const persons = [sample, sample, sample, sample, sample, sample, sample];
 
+const images = [
+  "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+  "/v1QQKq8M0fWxMgSdGOX1aCv8qMB.jpg",
+  "/2iGN0aKHJYD0xQydlfuCUAcgNbO.jpg",
+  "/rjBwhsOzHKUw2NIOrE7aMqjfe6s.jpg",
+]
+
 const App = () => {
   return (
-    <PersonsHomePage persons={persons} />
+    // <PersonsHomePage persons={persons} />
+    <PersonDetailsPage person={sample} images={images} />
   );
 };
 
