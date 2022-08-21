@@ -91,7 +91,7 @@ export const getUpcomingMovies = () => {
     });
 };
 
-export const getActors = (id) => {
+export const getPersons = (id) => {
   return fetch(
     `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}`
   )
@@ -102,7 +102,8 @@ export const getActors = (id) => {
     });
 };
 
-export const getActor = (id) => {
+// Get the primary person details by id.
+export const getPerson = (id) => {
   return fetch(
     `https://api.themoviedb.org/3/person/{person_id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
   )
