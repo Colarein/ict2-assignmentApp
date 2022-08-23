@@ -11,8 +11,8 @@ import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from '../movieReviews';
 import { Link } from "react-router-dom";
-// import { Button } from "@material-ui/core";
-// import SimilarMovies from "../similarMovies";
+import { Button } from "@material-ui/core";
+import SimilarMovies from "../similarMovies";
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
@@ -105,10 +105,10 @@ const MovieDetails = ({ movie }) => {
         <MovieReviews movie={movie} />
       </Drawer>
       <Link to={`/similars/${movie.id}`}>
-        {/* <Button variant="outlined" size="medium" color="primary">
+        <Button variant="outlined" size="medium" color="primary">
           <SimilarMovies movie={movie} />
           See More Movies like this ...
-        </Button> */}
+        </Button>
       </Link>
     </>
 

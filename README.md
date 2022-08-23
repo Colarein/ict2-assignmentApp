@@ -4,15 +4,14 @@ Name: Caroline Conway
 
 ## Overview.
 
-[ A paragraph on your React app's concept followed by a bullet-point list of its feature set - only list new/modified features if you are expanding the Movies app. ]
+The Movie apps purpose is to displays movies and actors in a userfriendly manor which is nicely designed and pulling live data in all the time from the TMDB to keep its info up to date.
 
 e.g.
 
-- Feature 1
-- Feature 2
-- Feature 3
-- etc
-- etc
+- Displays List of Actors
+- Displays Actors Details
+- Other features were in the process of development such as search by Actor Name, Favourited Actor and Similar Movies but were not developed to completion.
+
 
 ## Setup requirements.
 
@@ -33,26 +32,35 @@ npm install
 
 npm run start
 
+The app should run sucessfully.
+
 ## App Design.
 
 ### Routing/Navigation.
 
-[List the set of routes your app supports - only mention new instances if you expanded the Movies Fan app. State the view linked with each route.]
+The set of routes the app supports with the view linked with each route.
 
 e.g.
 
-- /movies/:id - detailed information on a specific movie.
-- /movies/upcoming - lists movies soon to be shown in cinemas.
-- etc.
-- etc.
+- "/persons/list" - PersonsHomePage
+Displays a list of actors ordered by popularity
+- "/persons/:id" - PersonDetailsPage
+Upon clicking on a button with this link you will be able to navigate to the actors individual id and page with Biogrpahical Info on it.
+- "/persons/favourites"  - FavouritePersonsPage
+This route should open up a page with selected favourtie Actors but unfortunatley it wasnt finsihed.
+- "/similars/:id" - 
+This route should display a list of similar movies but unfrotunatley it doesnt work.
+
 
 ### Views/Pages.
 
-[ For each view in your app, show a screenshot and caption - only new/modified ones in the case of the Movies Fan app. If necessary, use multiple screenshots to cover a view's full capability.
+[ For each view in the app, there is a screenshot and caption - only new/modified ones in the case of the Movies Fan app. If necessary, use multiple screenshots to cover a view's full capability.
 
-e.g.
+PersonsHomePage
+> Lists actors from the Popular endpoint. 
 
-> Lists movies from the Discover endpoint. Filtering on title and genre attributes is supported.
+PersonDetailsPage
+> Display an individual actor by id from the TMDB endpoint. 
 
 ![][d1]
 
