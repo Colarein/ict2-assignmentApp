@@ -138,3 +138,10 @@ platform your app uses (e.g. TMDB lists, Firestore) and itemize the data it pers
 [detail]: ./public/detail.png
 [caching]: ./public/caching.png
 [stories]: ./public/stories.png
+
+[similarMovieslink]: ./public/similarMoviesLink.png
+[similarMoviesPage]: ./public/similarMoviesPage.png
+[personList]: ./public/personList.png
+[personDetails]: ./public/personDetails.png
+[storybook]: ./public/storybook.png
+[sbPersonListHeader]: ./public/sbPersonListHeader.png
