@@ -8,6 +8,7 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import SimilarMoviesPage from "./pages/similarMoviesPage";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import PersonsHomePage from "./pages/personsHomepage";
+import PersonDetailsPage from './pages/personDetailsPage'
 import SiteHeader from "./components/siteHeader";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";

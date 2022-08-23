@@ -29,9 +29,9 @@ export default function PersonCard(props) {
       <CardMedia
         className={classes.media}
         image={
-          person.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${person.poster_path}`
-            : `${process.env.PUBLIC_URL}/assets/person-poster-placeholder.png`
+          person.profile_path
+            ? `https://image.tmdb.org/t/p/w500/${person.profile_path}`
+            : `${process.env.PUBLIC_URL}/assets/person-profile-placeholder.png`
         }
       />
       <CardContent>

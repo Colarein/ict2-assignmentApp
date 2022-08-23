@@ -13,7 +13,7 @@ export const Basic = () => {
 Basic.storyName = "Default";
 
 export const Exceptional = () => {
-  const sampleNoPoster = { ...SamplePerson, poster_path: undefined };
-  return <PersonCard person={sampleNoPoster} />;
+  const sampleNoProfile = { ...SamplePerson, profile_path: undefined };
+  return <PersonCard person={sampleNoProfile} />;
 };
 Exceptional.storyName = "exception";

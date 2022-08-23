@@ -1,34 +1,43 @@
-import React from "react";
-import PageTemplate from "../components/templateMovieListPage";
-import { useQuery } from "react-query";
-import Spinner from "../components/spinner";
-import { getPersons } from "../api/tmdb-api";
-// import AddToFavouritesIcon from "../components/cardIcons/addToFavourites";
+import React, { useState, useEffect } from "react";
+import PersonListHeader from "../components/headerPersonList";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import PersonList from "../components/personList";
+
+const useStyles = makeStyles({
+  root: {
+    padding: "20px",
+  },
+});
 
 const PersonsHomePage = (props) => {
-  const { data, error, isLoading, isError } = useQuery("discover actors", getPersons);
+  const classes = useStyles();
+  const [persons, setPersons] = useState([]);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  if (isError) {
-    return <h1>{error.message}</h1>;
-  }
-  const persons = data.results;
-
-  // These three lines are redundant; we will replace them laterg.
-  // const favourites = movies.filter((m) => m.favouurite);
-  // localStorage.setItem("favourites", JSON.stringify(favourites));
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json);
+        return json.results;
+      })
+      .then((persons) => {
+        setPersons(persons);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <PageTemplate
-      title="Discover Actors"
-      persons={persons}
-    // action={(person) => {
-    //   return <AddToFavouritesIcon movie={movie} />;
-    // }}
-    />
+    <Grid container className={classes.root}>
+      <Grid item xs={12}>
+        <PersonListHeader title={"Persons Home Page"} />
+      </Grid>
+      <Grid item container spacing={5}>
+        <PersonList persons={persons}></PersonList>
+      </Grid>
+    </Grid>
   );
 };
 
