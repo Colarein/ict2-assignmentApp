@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PersonsHomePage from "./pages/personsHomePage";
+// import PersonsHomePage from "./pages/personsHomePage";
 import PersonDetailsPage from './pages/personDetailsPage'
 
 const sample = {
