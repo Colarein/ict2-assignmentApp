@@ -1,6 +1,7 @@
 # ICT Skills 2 Assignment.
 
 Name: Caroline Conway
+Youtube: https://youtu.be/oKcxvQz6sCU
 
 ## Overview.
 
@@ -48,8 +49,8 @@ Displays a list of actors ordered by popularity
 Upon clicking on a button with this link you will be able to navigate to the actors individual id and page with Biogrpahical Info on it.
 - "/persons/favourites"  - FavouritePersonsPage
 This route should open up a page with selected favourtie Actors but unfortunatley it wasnt finsihed.
-- "/similars/:id" - 
-This route should display a list of similar movies but unfrotunatley it doesnt work.
+- "/similars/:id" - SimilarMoviesPage
+This route should display a list of similar movies but unfrotunatley it doesnt work properly and isnt displaying the movies and their images.
 
 
 ### Views/Pages.
@@ -58,13 +59,25 @@ This route should display a list of similar movies but unfrotunatley it doesnt w
 
 PersonsHomePage
 > Lists actors from the Popular endpoint. 
+![][personList]
 
 PersonDetailsPage
 > Display an individual actor by id from the TMDB endpoint. 
+![][personDetails]
 
-![][d1]
+FavouritePersonsPage
+> Allow the user to Heart and save an actor to their favourite actor list.
 
-![][d2]
+SimilarMoviesPage
+> Read in the ID of the current movie and display more movies in the same type of genres as it. Unfortunatley this page isnt complete.
+
+![][similarMovieslink]
+
+![][similarMoviesPage]
+
+![][personList]
+
+![][personDetails]
 
 > Shows detailed information on a specific movie
 
@@ -73,9 +86,17 @@ PersonDetailsPage
 ### Component catalogue.
 
 [ Use the Storybook UI to highlight the new components for which you developed stories.]
-e.g.
+e.g. 
+I developed Storybook UI for the following:
+Filter persons Card
+Person Card
+Person List Header
+Person Details
 
-![][stories]
+Unfortunatley all but one no longer work due to refactoring them.
+
+![][storybook]
+![][sbPersonListHeader]
 
 ## Caching.
 
