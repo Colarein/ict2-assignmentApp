@@ -25,7 +25,7 @@ export default function PersonCard(props) {
 
   return (
     <Card className={classes.card}>
-      <CardHeader className={classes.header} name={person.name} />
+      <CardHeader className={classes.personlistheader} name={person.name} />
       <CardMedia
         className={classes.media}
         image={
@@ -45,12 +45,12 @@ export default function PersonCard(props) {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-        {/* {action(person)}
-        <Link to={`/actors/${actor.id}`}> */}
-        <Button variant="outlined" size="medium" color="primary">
-          More Info ...
-        </Button>
-        {/* </Link> */}
+        {/* {/* {action(person)} */}
+        <Link to={`/persons/${person.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
+            More Info ...
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -26,11 +26,37 @@ const useStyles = makeStyles((theme) => ({
 export default function FilterPersonsCard(props) {
   const classes = useStyles();
 
-  const actorNames = [
-    { id: 1, name: " Daisy Ridley" },
-    { id: 2, name: "Mark Hamill" },
-    { id: 3, name: "Yoda" }
-  ]
+  const [names, setNames] = useState([{ id: '0', name: "All" }])
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/name/person/list?api_key=" +
+      process.env.REACT_APP_TMDB_KEY
+    )
+      .then(res => res.json())
+      .then(json => {
+        // console.log(json.names) 
+        return json.names
+      })
+      .then(apiNames => {
+        setNames([names[0], ...apiNames]);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleChange = (e, type, value) => {
+    e.preventDefault()
+    // Completed later
+  };
+
+  const handleTextChange = e => {
+    handleChange(e, "name", e.target.value)
+  }
+
+  const handleNameChange = e => {
+    handleChange(e, "name", e.target.value)
+  };
+
 
   return (
     <>
@@ -38,25 +64,29 @@ export default function FilterPersonsCard(props) {
         <CardContent>
           <Typography variant="h5" component="h1">
             <SearchIcon fontSize="large" />
-            Filter the movies.
+            Filter by Actor Name.
           </Typography>
           <TextField
             className={classes.formControl}
             id="filled-search"
             label="Search field"
             type="search"
+            value={props.nameFilter}
             variant="filled"
+            onChange={handleTextChange}
           />
           <FormControl className={classes.formControl}>
             <InputLabel id="actor-names-label">Actor Name</InputLabel>
             <Select
-              labelId="actor-names-label"
-              id="actor-names-select"
+              labelId="actor-label"
+              id="actor-select"
+              value={props.nameFilter}
+              onChange={handleNameChange}
             >
-              {actorNames.map((actorNames) => {
+              {personNames.map((personNames) => {
                 return (
-                  <MenuItem key={actorNames.id} value={actorNames.id}>
-                    {actorNames.name}
+                  <MenuItem key={personNames.id} value={personNames.id}>
+                    {personNames.name}
                   </MenuItem>
                 );
               })}
@@ -68,7 +98,7 @@ export default function FilterPersonsCard(props) {
         <CardContent>
           <Typography variant="h5" component="h1">
             <SearchIcon fontSize="large" />
-            Sort the movies.
+            Sort the actors.
           </Typography>
         </CardContent>
       </Card>

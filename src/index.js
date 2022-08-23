@@ -40,7 +40,7 @@ const App = () => {
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/similars/:id" element={<SimilarMoviesPage />} />
             <Route path="/persons/list" element={<PersonsHomePage />} />
-            {/* <Route path="/actors/:id" element={<ActorPage/>} /> */}
+            <Route path="/persons/:id" element={<PersonDetailsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </MoviesContextProvider>
