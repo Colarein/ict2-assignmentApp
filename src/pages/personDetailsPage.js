@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import PersonHeader from "../components/headerPerson/";
 import PersonDetails from "../components/personDetails/";
 import Grid from "@material-ui/core/Grid";
@@ -20,8 +21,35 @@ const useStyles = makeStyles((theme) => ({
 
 const PersonPage = (props) => {
   const classes = useStyles();
-  const person = props.person;
-  const images = props.images;
+  const { id } = useParams();
+  const [person, setPerson] = useState(null);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((person) => {
+        // console.log(person)
+        setPerson(person);
+      });
+  }, [id]);
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then((res) => res.json())
+      .then((json) => json.profiles)
+      .then((images) => {
+        // console,log(images)
+        setImages(images);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -43,8 +71,8 @@ const PersonPage = (props) => {
                       cols={1}
                     >
                       <img
-                        src={`https://image.tmdb.org/t/p/w500/${image}`}
-                        alt={image.profile_path}
+                        src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
+                        alt={image.file_path}
                       />
                     </ImageListItem>
                   ))}

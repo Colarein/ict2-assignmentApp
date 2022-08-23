@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PersonListHeader = (props) => {
+const PersonListHeader = (person) => {
   const classes = useStyles();
-  const name = props.name
+  const name = person.name
   return (
     <Paper component="div" className={classes.root}>
       <IconButton

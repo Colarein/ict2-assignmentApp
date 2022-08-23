@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import PersonsHomePage from "./pages/personsHomePage";
+import PersonsHomePage from "./pages/personsHomePage";
 import PersonDetailsPage from './pages/personDetailsPage'
 
 const sample = {
@@ -45,7 +45,7 @@ const sample = {
       name: "Action",
     },
   ],
-  personhomepage:
+  personshomepage:
     "https://www.starwars.com/films/star-wars-episode-viii-the-last-jedi",
   id: 181808,
   imdb_id: "tt2527336",
