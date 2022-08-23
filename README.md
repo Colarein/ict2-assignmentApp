@@ -75,13 +75,6 @@ SimilarMoviesPage
 
 ![][similarMoviesPage]
 
-![][personList]
-
-![][personDetails]
-
-> Shows detailed information on a specific movie
-
-![][detail]
 
 ### Component catalogue.
 
@@ -96,6 +89,7 @@ Person Details
 Unfortunatley all but one no longer work due to refactoring them.
 
 ![][storybook]
+
 ![][sbPersonListHeader]
 
 ## Caching.
